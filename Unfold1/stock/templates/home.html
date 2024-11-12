@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Stock Price Table</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    h1 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Stock Price Table</h1>
+  <br><br><br>
+
+  <div class="container">
+    <table class="table" align="center">
+      <thead>
+        <tr>
+          <th>Stock</th>
+          <th>Previous Price</th>
+          <th>Current Price</th>
+          <th>Last Updated Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for stock in object_list %}
+        <tr>
+          <td>{{ stock.stock }}</td>
+          <td>{{ stock.previous_price }}</td>
+          <td>{{ stock.current_price }}</td>
+          <td>{{ stock.updated_at }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Homepage</title>
+</head>
+<body>
+    {% if stock and stock_price %}
+        <h1>Stock: {{ stock }}</h1>
+        <h2>Stock Price: {{ stock_price }}</h2>
+    {% else %}
+        <p>No stock data available</p>
+    {% endif %}
+</body>
+</html> -->
+
